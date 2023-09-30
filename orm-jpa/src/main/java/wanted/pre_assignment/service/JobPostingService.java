@@ -59,7 +59,7 @@ public class JobPostingService {
 
     public List<JobPostingResponse> getJobPostings () {
 
-        List<JobPosting> jobPostings = jobPostingRepository.findAll();
+        List<JobPosting> jobPostings = (List<JobPosting>) jobPostingRepository.findAll();
         List<JobPostingResponse> jobPostingResponses = new ArrayList<>();
 
         for (JobPosting jobPosting : jobPostings) {
