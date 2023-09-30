@@ -2,6 +2,7 @@ package wanted.pre_assignment.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -34,7 +35,7 @@ class JobPostingControllerTest {
     @Autowired
     private JobPostingService jobPostingService;
 
-
+    @DisplayName(value = "채용 공고 리스트 테스트")
     @Test
     void getJobPostingList() throws Exception {
         MvcResult mvcResult = mockMvc.perform(get("/job-posting")
@@ -49,6 +50,7 @@ class JobPostingControllerTest {
         assertEquals(jobPostingService.getJobPostings(), returnedJobPostings);
     }
 
+    @DisplayName(value = "채용 공고 수정 테스트")
     @Test
     void updateJobPosting() throws Exception {
         String requestPayload = "{" +
@@ -66,6 +68,7 @@ class JobPostingControllerTest {
                 .andExpect(status().isOk());
     }
 
+    @DisplayName(value = "특정 채용 공고 상세 보기 테스트")
     @Test
     void getJobPostingDetail() throws Exception {
         MvcResult mvcResult = mockMvc.perform(get("/job-posting/detail")
