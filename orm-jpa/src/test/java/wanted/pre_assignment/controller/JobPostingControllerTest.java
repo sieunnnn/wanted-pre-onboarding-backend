@@ -59,9 +59,7 @@ class JobPostingControllerTest {
                 "}";
 
         mockMvc.perform(MockMvcRequestBuilders
-                        .patch("/job-posting")
-                        .param("jobPostingId", "7")
-                        .param("companyId", "1")
+                        .patch("/job-posting/{companyId}/{jobPostingId}", 1, 7)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(requestPayload))
                 .andDo(print())
@@ -71,10 +69,9 @@ class JobPostingControllerTest {
     @DisplayName(value = "특정 채용 공고 상세 보기 테스트")
     @Test
     void getJobPostingDetail() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/job-posting/detail")
+        MvcResult mvcResult = mockMvc.perform(get("/job-posting/detail/{jobPostingId}", 2)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .characterEncoding("UTF-8")
-                        .param("jobPostingId", "2"))
+                        .characterEncoding("UTF-8"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andReturn();

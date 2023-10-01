@@ -3,7 +3,6 @@ package wanted.pre_assignment.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import wanted.pre_assignment.domain.JobPosting;
 import wanted.pre_assignment.dto.request.JobPostingDeleteRequest;
 import wanted.pre_assignment.dto.request.JobPostingRequest;
 import wanted.pre_assignment.dto.response.JobPostingDetailResponse;
@@ -27,14 +26,14 @@ public class JobPostingController {
     }
 
     // 채용 공고 생성
-    @PostMapping(value = "")
-    public void createJobPosting(@RequestBody JobPostingRequest request, @RequestParam Long companyId) {
+    @PostMapping(value = "/{companyId}")
+    public void createJobPosting(@RequestBody JobPostingRequest request, @PathVariable Long companyId) {
         jobPostingService.createJobPosting(request, companyId);
     }
 
     // 채용 공고 수정
-    @PatchMapping(value = "")
-    public void updateJobPosting(@RequestBody JobPostingRequest request, @RequestParam Long jobPostingId, @RequestParam Long companyId) {
+    @PatchMapping(value = "/{companyId}/{jobPostingId}")
+    public void updateJobPosting(@RequestBody JobPostingRequest request, @PathVariable Long jobPostingId, @PathVariable Long companyId) {
         jobPostingService.updateJobPosting(request, jobPostingId, companyId);
     }
 
@@ -45,8 +44,8 @@ public class JobPostingController {
     }
 
     // 채용 공고 상세
-    @GetMapping(value = "/detail")
-    public ResponseEntity<JobPostingDetailResponse> getJobPostingDetail(@RequestParam Long jobPostingId) {
+    @GetMapping(value = "/detail/{jobPostingId}")
+    public ResponseEntity<JobPostingDetailResponse> getJobPostingDetail(@PathVariable Long jobPostingId) {
         JobPostingDetailResponse jobPostingDetailResponse = jobPostingService.getJobPostingsDetail(jobPostingId);
         return ResponseEntity.ok(jobPostingDetailResponse);
     }
