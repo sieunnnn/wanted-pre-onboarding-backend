@@ -8,7 +8,6 @@ import org.hibernate.annotations.DynamicUpdate;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@DynamicUpdate
 public class JobPostingRequest {
     private String national;
     private String region;
