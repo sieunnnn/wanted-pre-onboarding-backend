@@ -14,11 +14,7 @@
 <br>
 
 ## *️⃣ 사용기술
-<img src="https://img.shields.io/badge/Java-0B2C4A?style=flat&logo=java&logoColor=white" height="25px"/>
-<img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=flat&logo=springboot&logoColor=white" height="25px"/>
-<img src="https://img.shields.io/badge/JUnit5-25A162?style=flat&logo=junit5&logoColor=white" height="25px"/>
-<img src="https://img.shields.io/badge/Hibernate-59666C?style=flat&logo=hibernate&logoColor=white" height="25px"/>
-<img src="https://img.shields.io/badge/IntelliJ IDEA-black?style=flat&logo=intellijidea&logoColor=white" height="25px"/>
+<img src="https://img.shields.io/badge/Java-0B2C4A?style=flat&logo=java&logoColor=white" height="25px"/> <img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=flat&logo=springboot&logoColor=white" height="25px"/> <img src="https://img.shields.io/badge/JUnit5-25A162?style=flat&logo=junit5&logoColor=white" height="25px"/> <img src="https://img.shields.io/badge/Hibernate-59666C?style=flat&logo=hibernate&logoColor=white" height="25px"/> <img src="https://img.shields.io/badge/IntelliJ IDEA-black?style=flat&logo=intellijidea&logoColor=white" height="25px"/>
 
 <br>
 <br>
