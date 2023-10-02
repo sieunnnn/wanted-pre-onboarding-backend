@@ -59,7 +59,7 @@ class JobPostingControllerTest {
                 "}";
 
         mockMvc.perform(MockMvcRequestBuilders
-                        .patch("/job-posting/{companyId}/{jobPostingId}", 1, 7)
+                        .patch("/job-posting/{companyId}/{jobPostingId}", 1, 5)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(requestPayload))
                 .andDo(print())
